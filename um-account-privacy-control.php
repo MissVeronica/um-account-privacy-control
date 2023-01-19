@@ -33,6 +33,7 @@ if( is_admin()) {
 } else {
 
     add_filter( 'um_registration_complete',                 'um_registration_complete_privacy', 10, 1 );
+    add_filter( 'um_redirect_home_custom_url',              'um_redirect_privacy_custom_url', 9, 3 );
 }
 
 function um_admin_bulk_user_actions_privacy( $actions ) {
@@ -72,6 +73,22 @@ function um_admin_custom_hook_privacy_no( $user_id ) {
     update_user_meta( $user_id, 'profile_privacy', 'Everyone' );
     UM()->user()->remove_cache( $user_id );
     um_fetch_user( $user_id );
+}
+
+
+
+function um_redirect_privacy_custom_url( $url,  $requested_user_id, $is_my_profile ) {
+
+    if (   UM()->user()->is_private_profile( $requested_user_id ) && 
+         ! um_can_view_profile( $requested_user_id ) && 
+         ! $is_my_profile ) {
+
+        if ( ! empty( UM()->options()->get( 'um_profile_privacy_url' ))) {        
+            $url = add_query_arg( 'redirect_msg', 'pvt_profile', esc_url( UM()->options()->get( 'um_profile_privacy_url' ) ));
+        }          
+    }
+
+    return $url;    
 }
 
 function manage_users_columns_custom_privacy( $columns ) {
@@ -130,8 +147,15 @@ function um_settings_structure_privacy_registration( $settings_structure ) {
         'type'          => 'select',
         'options'       => array( 'empty' => '', 'onlyme' => 'Only me', 'everyone' => 'Everyone' ),
         'label'         => __( 'Registration Profile Privacy - User Account', 'ultimate-member' ),
-        'tooltip'       => __( '', 'ultimate-member' )
+        'tooltip'       => __( 'Set Account Profile Privacy at Registration', 'ultimate-member' )
         );
 
+    $settings_structure['access']['sections']['other']['fields'][] = array(
+        'id'            => 'um_profile_privacy_url',
+        'type'          => 'text',
+        'label'         => __( 'Registration Profile Privacy - Redirect URL', 'ultimate-member' ),
+        'tooltip'       => __( 'Page when trying to access a Private User Page', 'ultimate-member' )
+        );
+    
     return $settings_structure;
 }

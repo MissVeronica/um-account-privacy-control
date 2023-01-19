@@ -10,7 +10,7 @@
  * Author URI:      https://github.com/MissVeronica?tab=repositories
  * Text Domain:     ultimate-member
  * Domain Path:     /languages
- * UM version:      2.5.0
+ * UM version:      2.5.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;

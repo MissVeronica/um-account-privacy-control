@@ -8,8 +8,7 @@ Account and Directory Privacy settings for Registration.
 2. Users Directory Privacy setting display in a Directory column and the User Directory setting can be changed via the UM Actions dropdown menu.
 ## Settings
 UM Settings -> Access -> Other
-1. Registration Profile Privacy - Members Directory
-2. Registration Profile Privacy - User Account
+1. Registration Profile Privacy - User Account
 
 ## Installation
 Download the zip file and install as a WP Plugin, activate the plugin.

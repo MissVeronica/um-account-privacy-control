@@ -112,13 +112,6 @@ function manage_users_custom_column_privacy( $value, $column_name, $user_id ) {
 
 function um_registration_complete_privacy( $user_id ) {
 
-    if ( ! empty( UM()->options()->get( 'um_profile_privacy_directory' ))) {
-
-        if( UM()->options()->get( 'um_profile_privacy_directory' ) == 'hide' ) {
-            update_user_meta( $user_id, 'hide_in_members', array( 'Yes' ) );
-        }
-    }
-
     if ( ! empty( UM()->options()->get( 'um_profile_privacy_account' ))) {
 
         if( UM()->options()->get( 'um_profile_privacy_account' ) == 'onlyme' ) {
@@ -131,14 +124,6 @@ function um_registration_complete_privacy( $user_id ) {
 }
 
 function um_settings_structure_privacy_registration( $settings_structure ) {
-
-    $settings_structure['access']['sections']['other']['fields'][] = array(
-        'id'            => 'um_profile_privacy_directory',
-        'type'          => 'select',
-        'options'       => array(  'empty' => '', 'hide' => 'Hide', 'show' => 'Show' ),
-        'label'         => __( 'Registration Profile Privacy - Members Directory', 'ultimate-member' ),
-        'tooltip'       => __( '', 'ultimate-member' )
-        );
 
     $settings_structure['access']['sections']['other']['fields'][] = array(
         'id'            => 'um_profile_privacy_account',

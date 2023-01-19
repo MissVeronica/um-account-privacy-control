@@ -1,7 +1,9 @@
 # UM Account Privacy Control
 Extension to Ultimate Member to Manage Account and Directory Privacy from the backend in the WP All Users page.
 
-Account and Directory Privacy settings for Registration.
+Account Privacy settings for Registration.
+
+Redirect URL when trying to access a Private User Page.
 
 ## WP All Users page 
 1. Users Account Privacy setting display in an Account column and the User Account Privacy setting can be changed via the UM Actions dropdown menu.
@@ -9,6 +11,8 @@ Account and Directory Privacy settings for Registration.
 ## Settings
 UM Settings -> Access -> Other
 1. Registration Profile Privacy - User Account
-
+2. Registration Profile Privacy - Redirect URL
+## UM Settings
+UM Settings -> General -> Account -> "Hide profiles from directory by default"
 ## Installation
 Download the zip file and install as a WP Plugin, activate the plugin.

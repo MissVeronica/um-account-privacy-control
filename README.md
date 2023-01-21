@@ -14,5 +14,9 @@ UM Settings -> Access -> Other
 2. Registration Profile Privacy - Redirect URL
 ## UM Settings
 UM Settings -> General -> Account -> "Hide profiles from directory by default"
+## Translations or Text changes
+Use the "Say What?" plugin with text domain ultimate-member
+## Updates
+Version 2.1.0 Translation updates
 ## Installation
 Download the zip file and install as a WP Plugin, activate the plugin.

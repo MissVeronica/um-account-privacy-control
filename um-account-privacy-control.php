@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Ultimate Member - Account Privacy Control
  * Description:     Extension to Ultimate Member to Manage Account Privacy from the backend.
- * Version:         2.0.0 
+ * Version:         2.1.0 
  * Requires PHP:    7.4
  * Author:          Miss Veronica
  * License:         GPL v2 or later
@@ -119,7 +119,7 @@ function manage_users_custom_column_privacy( $value, $column_name, $user_id ) {
         $status = um_user( 'profile_privacy' );
 
         if( $status == 'Only me' ) {
-            $value = __( 'Only Me', 'ultimate-member' );
+            $value = __( 'Only me', 'ultimate-member' );
         } else { 
             $value = __( 'Everyone', 'ultimate-member' );
         }   
@@ -145,7 +145,7 @@ function um_settings_structure_privacy_registration( $settings_structure ) {
     $settings_structure['access']['sections']['other']['fields'][] = array(
         'id'            => 'um_profile_privacy_account',
         'type'          => 'select',
-        'options'       => array( 'empty' => '', 'onlyme' => 'Only me', 'everyone' => 'Everyone' ),
+        'options'       => array( 'empty' => '', 'onlyme' => __( 'Only me', 'ultimate-member' ), 'everyone' => __( 'Everyone', 'ultimate-member' ) ),
         'label'         => __( 'Registration Profile Privacy - User Account', 'ultimate-member' ),
         'tooltip'       => __( 'Set Account Profile Privacy at Registration', 'ultimate-member' )
         );

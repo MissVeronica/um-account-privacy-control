@@ -22,7 +22,7 @@ Use the "Say What?" plugin with text domain ultimate-member
 
 ## Updates
 1. Version 2.1.0 Translation updates
-2. Version 2.2.0 Tested with UM 2.8.3
+2. Version 2.2.0 Updated for UM 2.8.3
 
 ## Installation
 Download the zip file and install as a WP Plugin, activate the plugin.
